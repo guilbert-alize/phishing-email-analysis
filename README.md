@@ -10,23 +10,23 @@ A project to clean, analyze, and visualize phishing email data using SQL, Python
 
 \- `sql/`: SQL scripts (`data\_cleaning.sql`)
 
+\- `python/`: python scripts (`phishing_emails.py`) and outputs
+
 \- `README.md`: Project overview
 
 
 
 \## Setup
 
-1\. Install SQLite3.
+1. **SQL**: Run `sql/data_cleaning.sql` in SQLite.
 
-2\. Run `sql/data\_cleaning.sql` to clean `data/Phishing\_Email.csv`.
-
-3\. Output: `data/cleaned\_emails.csv` for Python analysis.
-
+2. **Python**: Run `python/phishing_emails.ipynb` in Anaconda (`phishing` environment).
+   - Install: `pip install pandas numpy nltk scikit-learn textblob matplotlib seaborn jupyter`
+   - Outputs: Plots (`text_length_boxplot.png`, etc.) and CSVs.
 
 
 \## Next Steps
 
-\- Python: Perform EDA, NLP, and ML for phishing detection.
 
 \- Power BI: Visualize phishing trends and model performance.
 
