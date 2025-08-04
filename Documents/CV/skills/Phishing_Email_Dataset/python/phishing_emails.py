@@ -265,19 +265,6 @@ plt.show()
 coef_df.to_csv('C:/Users/guilb/Documents/CV/skills/Phishing_Email_Dataset/python/coefficient_analysis.csv', index=False)
 
 
-# In[33]:
-
-
-pip install ipynb-py-convert
-
-
-# In[2]:
-
-
-jupyter nbconvert --to script phishing_emails.ipynb
-
-
-# In[ ]:
 
 
 
