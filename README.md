@@ -1,32 +1,19 @@
-\# Phishing Email Analysis
+# Phishing Email Analysis
 
-A project to clean, analyze, and visualize phishing email data using SQL, Python, and Power BI for cybersecurity insights.
+## Aperçu
+Ce projet analyse un jeu de données d’emails pour détecter les emails de phishing, en combinant **SQL** pour le nettoyage, **Python** pour l’analyse et la modélisation, et **Power BI** est en cours
 
+## Structure
+- `data/` : Données brutes (`Phishing_Email.csv`) et nettoyées (`cleaned_emails.csv`).
+- `sql/` : Scripts SQL (`data_cleaning.sql`).
+- `python/` : Notebook Jupyter (`phishing_emails.ipynb`) et script Python (`phishing_emails.py`).
+- `python/outputs/` : Visualisations (scatterplots, WordClouds, matrice de confusion).
 
+## Installation et exécution
+### Jupyter Notebook
+1. Installer les dépendances :
+   ```bash
+   pip install pandas numpy nltk scikit-learn matplotlib seaborn wordcloud
+Exécuter python/phishing_emails.ipynb dans Jupyter Notebook pour voir le processus complet (code, markdown, visualisations).
 
-\## Structure
-
-\- `data/`: Raw (`Phishing\_Email.csv`) and cleaned (`cleaned\_emails.csv`) datasets
-
-\- `sql/`: SQL scripts (`data\_cleaning.sql`)
-
-\- `python/`: python scripts (`phishing_emails.ipynb`) and outputs
-
-\- `README.md`: Project overview
-
-
-
-\## Setup
-
-1. **SQL**: Run `sql/data_cleaning.sql` in SQLite.
-
-2. **Python**: Run `python/phishing_emails.ipynb` in Anaconda (`phishing` environment).
-   - Install: `pip install pandas numpy nltk scikit-learn textblob matplotlib seaborn jupyter`
-   - Outputs: Plots (`text_length_boxplot.png`, etc.) and CSVs.
-
-
-\## Next Steps
-
-
-\- Power BI: Visualize phishing trends and model performance.
 
