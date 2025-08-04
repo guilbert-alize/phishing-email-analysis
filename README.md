@@ -10,7 +10,7 @@ A project to clean, analyze, and visualize phishing email data using SQL, Python
 
 \- `sql/`: SQL scripts (`data\_cleaning.sql`)
 
-\- `python/`: python scripts (`phishing_emails.py`) and outputs
+\- `python/`: python scripts (`phishing_emails.ipynb`) and outputs
 
 \- `README.md`: Project overview
 
