@@ -1,35 +1,31 @@
---- Table emails
+--- Création d'une table emails
 CREATE TABLE emails (
     email_id INTEGER PRIMARY KEY AUTOINCREMENT,
     email_text TEXT,
     email_type TEXT
 );
 
--- temporary table to import the dataset that only has 2 columns
+-- Création table temporaire pour le fichier avec 2 colonnes
 CREATE TABLE temp_emails (
     email_text TEXT,
     email_type TEXT
 );
 
--- Import CSV (run in SQLite prompt)
--- .mode csv
--- .import --skip 1 data/Phishing_Email.csv temp_emails
-
--- Transfer to main table
+-- Transfert des données entre la table temporaire et la table final
 INSERT INTO emails (email_text, email_type)
 SELECT email_text, email_type FROM temp_emails;
 
--- Drop temp table
+-- Suprresion de la table inutile
 DROP TABLE temp_emails;
 
--- Manage missing and empty values
+-- Néttoyages des données
 UPDATE emails
 SET email_text = 'Unknown'
 WHERE email_text IS NULL OR email_text = '';
 DELETE FROM emails
 WHERE email_type IS NULL OR email_type = '';
 
--- Standardize email_type to is_phishing (adjust based on actual email_type values)
+-- Normalisation de la colonne spam
 ALTER TABLE emails ADD COLUMN is_phishing INTEGER;
 UPDATE emails
 SET is_phishing = CASE
@@ -39,7 +35,7 @@ SET is_phishing = CASE
 END;
 ALTER TABLE emails DROP COLUMN email_type;
 
--- Adding useful infos
+-- Ajout d'infos pour analyse
 ALTER TABLE emails ADD COLUMN text_length INTEGER;
 UPDATE emails
 SET text_length = LENGTH(email_text);
